@@ -1,6 +1,3 @@
-// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
-
 const express = require('express')
 const router = express.Router()
 
@@ -9,14 +6,14 @@ const options = {
     info: {
       title: 'AWS Demo',
       version: '1.0.0',
-      description: 'An AWS Demo for a full stack application with Amazon ECS, applying DevOps practices',
+      description: 'Ecommerce for online shop',
       contact: {
-        email: 'burkhmar@amazon.de'
+        email: 'dharmesh.nadola@nagarro.com'
       }
     },
     tags: [
       {
-        name: 'AWS Demo Endpoints',
+        name: 'Ecommerce Endpoints',
         description: 'Enpoints descriptions'
       }
     ],

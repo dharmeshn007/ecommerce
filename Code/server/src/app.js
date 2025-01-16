@@ -1,6 +1,3 @@
-// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
-
 const express = require('express');
 const app = express();
 var cors = require('cors');
@@ -27,7 +24,7 @@ app.use('/api/docs', swagger.router)
 */
 app.get('/status', (req, res) => {
   res.send({
-    message: 'AWS Demo server is up and running!'
+    message: 'Ecommerce server is up and running!'
   })
 })
 

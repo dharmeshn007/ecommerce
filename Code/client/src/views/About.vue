@@ -1,9 +1,6 @@
-<!-- Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. -->
-<!-- SPDX-License-Identifier: MIT-0 -->
-
 <template>
   <div class="about">
-    <h3>Frontend layer demo</h3>
+    <h3>Ecommerce Frontend</h3>
     <h4>This code is written in Vue.js</h4>
     
   </div>

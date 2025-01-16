@@ -1,6 +1,3 @@
-<!-- Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. -->
-<!-- SPDX-License-Identifier: MIT-0 -->
-
 <template>
   <div id="navbar">
     <b-navbar toggleable="lg" type="dark" style="width: auto;" variant="dark" fixed="top">
@@ -11,7 +8,7 @@
                 class="ml-2"
                 to="/main"
                 style="color:white"
-                >Full Stack Demo with Amazon ECS + DevOps practices
+                >Ecommerce for online shopping
             </router-link>
         </b-navbar-brand>
 

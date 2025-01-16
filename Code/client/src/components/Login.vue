@@ -1,10 +1,7 @@
-<!-- Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. -->
-<!-- SPDX-License-Identifier: MIT-0 -->
-
 <template>
   <div id="login">
     <div class="form">
-      <h1>AWS Demo Login*</h1>
+      <h1>Ecommerce Login*</h1>
       <form @submit.prevent="onSubmit">
         <input
           v-model="user"
@@ -25,7 +22,7 @@
         </button>
       </form>
       <br>
-      <h5>*No auth was implemented, just a Vue.js demo component</h5>
+      <h5>*No auth was implemented, just a ecommerce demo component</h5>
     </div>
   </div>
 </template>

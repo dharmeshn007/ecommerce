@@ -1,6 +1,3 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: MIT-0
-
 # build stage
 FROM public.ecr.aws/bitnami/node:16 as build-stage
 WORKDIR /app

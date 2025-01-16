@@ -1,10 +1,9 @@
 {
-  "name": "aws-ecs-demo-backend",
+  "name": "ecommerce-backend",
   "version": "1.0.0",
-  "description": "AWS Demo",
-  "author": "Marina Burkhardt",
+  "description": "Ecommerce Website",
+  "author": "Dharmesh Nadola",
   "private": true,
-  "license": "MIT",
   "main": "app.js",
   "scripts": {
     "start": "node ./src/app.js --exec  \"npm run lint && node\""

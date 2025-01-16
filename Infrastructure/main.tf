@@ -1,31 +1,13 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: MIT-0
-
-/*===========================
-          Root file
-============================*/
-
 # ------- Providers -------
 provider "aws" {
   profile = var.aws_profile
   region  = var.aws_region
-
-  # provider level tags - yet inconsistent when executing 
-  # default_tags {
-  #   tags = {
-  #     Created_by = "Terraform"
-  #     Project    = "AWS_demo_fullstack_devops"
-  #   }
-  # }
 }
 
 # ------- Random numbers intended to be used as unique identifiers for resources -------
 resource "random_id" "RANDOM_ID" {
   byte_length = "2"
 }
-
-# ------- Account ID -------
-data "aws_caller_identity" "id_current_account" {}
 
 # ------- Networking -------
 module "networking" {
@@ -364,7 +346,7 @@ module "codepipeline" {
   name                     = "pipeline-${var.environment_name}"
   pipe_role                = module.devops_role.arn_role
   s3_bucket                = module.s3_codepipeline.s3_bucket_id
-  github_token             = var.github_token
+  github_token             = local.github_token
   repo_owner               = var.repository_owner
   repo_name                = var.repository_name
   branch                   = var.repository_branch

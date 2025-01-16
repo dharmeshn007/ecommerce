@@ -1,10 +1,7 @@
-<!-- Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. -->
-<!-- SPDX-License-Identifier: MIT-0 -->
-
 <template>
   <div class="container">
-    <h1>Welcome to the Demo website!</h1>
-    <h3>Are you ready to learn how to build a full stack application with Amazon ECS, combining it with DevOps practices?</h3>
+    <h1>Welcome to the Ecommerce!</h1>
+    <h3>Where Quality Meets Convenience – Shop Smarter, Live Better!</h3>
     <br>
 
     <div class="jumbotron text-center winter">

@@ -1,6 +1,3 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: MIT-0
-
 variable "aws_profile" {
   description = "The profile name that you have configured in the file .aws/credentials"
   type        = string
@@ -27,9 +24,9 @@ variable "environment_name" {
 #   sensitive   = true
 # }
 
-variable "github_token" {
-  default = data.aws_secretsmanager_secret_version.github_token.secret_string
-}
+# variable "github_token" {
+#   default = data.aws_secretsmanager_secret_version.github_token.secret_string
+# }
 
 variable "port_app_server" {
   description = "The port used by your server application"
