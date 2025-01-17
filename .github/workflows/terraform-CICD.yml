@@ -27,7 +27,6 @@ jobs:
 
       # Step 3: Configure Cloud Provider Credentials
       - name: Configure AWS Credentials
-        if: secrets.AWS_ACCESS_KEY_ID != null
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
