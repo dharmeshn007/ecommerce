@@ -53,11 +53,11 @@ jobs:
         working-directory: Infrastructure
         run: terraform plan -out=tfplan
 
-      # Step 8: Terraform Apply (on push only)
-      - name: Terraform Apply
-        if: github.event_name == 'push'
-        working-directory: Infrastructure
-        run: terraform apply -auto-approve tfplan
+      # # Step 8: Terraform Apply (on push only)
+      # - name: Terraform Apply
+      #   if: github.event_name == 'push'
+      #   working-directory: Infrastructure
+      #   run: terraform apply -auto-approve tfplan
 
       - name: Terraform Destroy
         working-directory: Infrastructure
