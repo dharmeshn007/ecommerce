@@ -1,0 +1,61 @@
+name: Terraform CI/CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    name: Terraform Deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Terraform CLI
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.0  # Replace with your desired version
+
+      # Step 3: Configure Cloud Provider Credentials
+      - name: Configure AWS Credentials
+        if: secrets.AWS_ACCESS_KEY_ID != null
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1  # Replace with your region
+
+      # Step 4: Navigate to Terraform Directory
+      - name: Change Directory to Infrastructure
+        run: cd Infrastructure
+
+      # Step 5: Terraform Init
+      - name: Terraform Init
+        working-directory: Infrastructure
+        run: terraform init
+
+      # Step 6: Terraform Validate
+      - name: Terraform Validate
+        working-directory: Infrastructure
+        run: terraform validate
+
+      # Step 7: Terraform Plan
+      - name: Terraform Plan
+        id: plan
+        working-directory: Infrastructure
+        run: terraform plan -out=tfplan
+
+      # Step 8: Terraform Apply (on push only)
+      - name: Terraform Apply
+        if: github.event_name == 'push'
+        working-directory: Infrastructure
+        run: terraform apply -auto-approve tfplan
