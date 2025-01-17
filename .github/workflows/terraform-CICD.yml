@@ -58,3 +58,7 @@ jobs:
         if: github.event_name == 'push'
         working-directory: Infrastructure
         run: terraform apply -auto-approve tfplan
+
+      - name: Terraform Destroy
+        working-directory: Infrastructure
+        run: terraform destroy -auto-approve
