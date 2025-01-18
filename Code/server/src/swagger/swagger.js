@@ -4,7 +4,7 @@ const router = express.Router()
 const options = {
   swaggerDefinition: {
     info: {
-      title: 'AWS Demo',
+      title: 'Ecommerce For online Shopping',
       version: '1.0.0',
       description: 'Ecommerce for online shop',
       contact: {
@@ -14,7 +14,7 @@ const options = {
     tags: [
       {
         name: 'Ecommerce Endpoints',
-        description: 'Enpoints descriptions'
+        description: 'Enpoints For Health Checkup and retrive Producs'
       }
     ],
     schemes: ['http'],
